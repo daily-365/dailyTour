@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="web.dao.face.MemberDAO">
+  
+   <!-- 회원가입 -->
+   <insert id="join">
+   insert into tbl_member (userNo,userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail)
+   values (tbl_member_seq.nextVal,#{userId},#{userPw},#{userName},#{userBirth1},#{userBirth2},#{userBirth3},#{userGender},#{userPhone},#{userMail})
+   
+   </insert>
+  
+  <!-- 로그인 -->
+  <select id="login" resultType="web.dto.MemberDTO" >
+   
+    select userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail,verify
+    from tbl_member
+    where userId=#{userId}
+    and userPw= #{userPw}
+     
+  
+  </select>
+  
+  
+  </mapper>

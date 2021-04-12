@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="web.dao.face.AdminDAO">
+  
+  <!-- 회원목록 전체조회  (관리자 제외)-->
+  
+  <select id="AllMemberList" resultType="web.dto.MemberDTO">
+   select userNo,userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail,verify,regiDate
+  from tbl_member
+  where verify=0
+  order by userNo desc
+  </select>
+  
+  <sql id="search">
+    <if test="searchType=='id'.toString()">where userId like '%'||#{keyword}||'%' </if>
+   <if test="searchType=='name'.toString()">where userName like '%'||#{keyword}||'%' </if>
+    <if test="searchType=='grade'.toString()">where userGrade like '%'||#{keyword}||'%' </if>
+  </sql>
+  
+  <select id="listPage" resultType="web.dto.MemberDTO"> 
+  select userNo,userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail,verify,regiDate
+  from 
+  (select  userNo,userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail,verify,regiDate,
+      row_number() over(order by userNo desc )   as rnum
+        from tbl_member 
+        <include refid="search"></include>
+        ) m
+        where
+         rnum between #{rowStart} and #{rowEnd}
+         and verify =0
+          order by userNo desc
+      </select>
+  
+  <select id="listCount" resultType="int">
+    select count(*)
+    from tbl_member
+    where 
+    <include refid="search"></include>
+     <![CDATA[
+ userNo > 0
+]]>
+    </select>
+  
+  </mapper>

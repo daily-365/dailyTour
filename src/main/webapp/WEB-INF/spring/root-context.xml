@@ -13,6 +13,10 @@
 		<property name="password" value="1234"/>
 	</bean>
 	
+	
+	
+	
+	
 	<!-- 마이바티스 DataSource 프록시(Proxy) -->
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 	

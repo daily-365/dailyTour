@@ -12,8 +12,16 @@ public class BoardDTO {
     private Date boardDate;
 	private int boardVisit;
 	
+	private String writeId;
 	
 	
+	
+	public String getwriteId() {
+		return writeId;
+	}
+	public void setwriteId(String writeId) {
+		this.writeId = writeId;
+	}
 	public int getBoardNo() {
 		return boardNo;
 	}

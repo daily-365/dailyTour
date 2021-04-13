@@ -51,7 +51,7 @@
    <nav class="container-fluid">
    <ul class="nav nav-pills nav-stacked col-sm-2">
   <li role="presentation" class="active"><a href="#">공지사항</a></li>
-  <li role="presentation"><a href="${pageContext.request.contextPath }/board/view">이벤트 정보</a></li>
+  <li role="presentation"><a href="${pageContext.request.contextPath }/admin/board/view">이벤트 정보</a></li>
    </ul>
 </nav>
 
@@ -105,7 +105,10 @@
 </nav>
  
 
- 
+ <button class="btn" type="button" style="float: right;" 
+ onclick="javascript: location.href='${pageContext.request.contextPath}/admin/board/write';">글쓰기</button>
+
+
 </section>
   
    

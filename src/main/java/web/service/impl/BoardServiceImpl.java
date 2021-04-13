@@ -17,12 +17,7 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO dao;
 	
-	@Override
-	public void writeBoardService(BoardDTO board) {
 
-		 dao.writeBoard(board);
-		
-	}
 
 	@Override
 	public List<BoardDTO> listBoardService() {
@@ -30,17 +25,7 @@ public class BoardServiceImpl implements BoardService {
 		return dao.listBoard();
 	}
 
-	@Override
-	public void updateBoardService() {
-		dao.updateBoard();
-		
-	}
 
-	@Override
-	public void deleteBoardService() {
-		dao.deleteBoard();
-		
-	}
 
 
 	@Override

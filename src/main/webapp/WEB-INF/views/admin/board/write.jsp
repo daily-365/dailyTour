@@ -38,7 +38,9 @@
        <h1 class="text-center">글쓰기</h1>
        
       <form role="form" method="post" autocomplete="off" onsubmit="msg()">
-        
+              
+              <input type="hidden" name="writeId" value="${member.userName}">
+             
               <label for="boardTitle">제목</label><br>
              <input type="text" name="boardTitle" placeholder="제목을 입력해 주세요" required="required"><br><br>
                <label for="boardContent">내용</label><br>

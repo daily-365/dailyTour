@@ -51,7 +51,8 @@
      
           </div>
           
-  
+        <button class="btn col-sm-offset-10" type="button" onclick="javascript: location.href='/admin/board/modify'">수정</button>
+        <button class="btn" type="button" onclick="javascript: location.href='/admin/board/delete'">삭제</button>
         <br><br>
       
        </div>

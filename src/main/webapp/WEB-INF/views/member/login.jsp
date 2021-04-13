@@ -40,7 +40,7 @@
                
                <hr>
                <span><img src="" alt="네이버"><img src="" alt="카카오톡"><img src="" alt="페이스북"><img src="" alt="구글"><img src="" alt="트위터"></span>
-               
+        
                 <hr>
                 <a href="#">아이디를 잊으셨나요?</a>
                 <hr>

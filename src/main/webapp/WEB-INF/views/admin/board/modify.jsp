@@ -36,16 +36,15 @@ function msg() {
        
 
              <div class="form-group col-sm-4 col-sm-offset-4">
-             
-               <input type="hidden" name="boardNo" value="<%=request.getParameter("boardNo")%>">
-             
+              
+                                   
               <label for="boardTitle" >제목</label><br>
-             <input class="form-control" type="text" name="boardTitle" placeholder="제목을 입력해 주세요" required="required"><br><br>
+             <input class="form-control" type="text" name="boardTitle"  placeholder="제목을 입력해 주세요" required="required"><br><br>
              </div>
                
                 <div class="form-group col-sm-4 col-sm-offset-4">
                <label for="boardContent">내용</label><br>
-             <textarea class="form-control" rows="5" cols="50" name="boardContent" placeholder="내용을 입력해 주세요" required="required"></textarea>
+             <textarea class="form-control" rows="5" cols="50"  name="boardContent" placeholder="내용을 입력해 주세요" required="required"></textarea>
               </div>
         
             <div class="form-group col-sm-2 col-sm-offset-4"><br>

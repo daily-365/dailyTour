@@ -35,41 +35,140 @@
  
  
     <section class="container">
-    
+ 
+         <c:if test="${member.verify ne 1 }">
+ 
+ 
        <c:forEach var="board" items="${board}">
-       
-               
-        <div style="border: 3px solid yellow;"> <br>
         
-        <p><span class="pull-left">&nbsp;&nbsp;&nbsp;작성자 : ${board.writeId}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;제목 : ${board.boardTitle}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>등록일 : <fmt:formatDate value="${board.boardDate}" pattern="yyyy-MM-dd"/></span><span class="pull-right">조회수 : ${board.boardVisit}&nbsp;&nbsp;&nbsp;&nbsp;</span> </p>
-        
-            
-        <p  style="border-top: 2px solid red;"> <br>&nbsp;${board.boardContent}</p>
-        
-        <br>
-        <div class="col-sm-offset-10">
-     
-          </div>
-          
-  
-        <br><br>
       
-       </div>
-       <br>
+        <form role="form"  autocomplete="off"  onsubmit="msg()">
+       
+           <div class="form-group col-sm-6 col-sm-offset-3">
+              <label for="boardNo" >글번호</label><br>
+              <input class="form-control" type="number" value="${board.boardNo }" name="boardNo" readonly="readonly">
+              </div>
+              
+              <div class="form-group col-sm-6 col-sm-offset-3">              
+              <label for="boardTitle" >제목</label><br>
+             <input class="form-control" type="text" name="boardTitle" value="${board.boardTitle }"  readonly="readonly">
+             </div>
+               
+                <div class="form-group col-sm-6 col-sm-offset-3">
+               <label for="boardContent">내용</label><br>
+             <textarea class="form-control" rows="10" cols="50"  name="boardContent" readonly="readonly">${board.boardContent}</textarea>
+              </div>
+              
+      
+     <div class="form-group col-sm-6 col-sm-offset-3">
+     <br><br>
+      <p style="border: 3px dashed black;"> </p>
+      <br><br>
+      </div>     
+      
+         </form>
 
+          </c:forEach>
+         
+         </c:if>
+         
+         
+         <c:if test="${member.verify eq 1 }">
+          <c:forEach var="board" items="${board}">
+          
+          <form role="form"  autocomplete="off" >
        
-       
-       </c:forEach>
+           <div class="form-group col-sm-6 col-sm-offset-3">
+              <label for="boardNo" >글번호</label><br>
+              <input class="form-control" type="number" value="${board.boardNo }"  name="boardNo" readonly="readonly"">
+              </div>
+              
+              <div class="form-group col-sm-6 col-sm-offset-3">              
+              <label for="boardTitle" >제목</label><br>
+             <input class="form-control" type="text" name="boardTitle" value="${board.boardTitle }"  onfocus="if(this.value=='${board.boardTitle}'){this.value=''}" required="required" >
+             </div>
+               
+                <div class="form-group col-sm-6 col-sm-offset-3">
+               <label for="boardContent">내용</label><br>
+             <textarea class="form-control" rows="10" cols="50"  name="boardContent"  onfocus="if(this.value=='${board.boardContent}'){ this.value=''}" required="required">${board.boardContent}</textarea>
+              </div>
+              
+                 
+         <div class="form-group col-sm-6 col-sm-offset-3">
+        <button class="btn" type="button" id="modifyBtn">수정</button>
+        <button class="btn" type="button"  id="deleteBtn">삭제</button>
+         
+         
+          <br><br> <br><br>
+           </div>
+         
+        <div class="form-group col-sm-6 col-sm-offset-3">
+         <br><br>
+      <p style="border: 3px dashed black;"> </p>
+      <br><br>
+      </div>     
+      
+         
+         </form>
+          
+           </c:forEach>
+                  
+          </c:if>
+                   
+          
+        <script type="text/javascript">
+        
+        var form = $("form[role='form']")
+        
+        
+        $('#modifyBtn').on('click',function(){
+        	
+        if(confirm("수정 하시겠습니까?")==true){
+        	
+        	form.attr('action','/board/modify');
+        	form.attr('method','get');
+        	form.submit();
+        }
+        });
+        
+        
+        $('#deleteBtn').on('click',function(){
+        if(confirm("삭제 하시겠습니까?")==true){
+        	
+        	form.attr('action','/board/delete');
+        	form.attr('method','get');
+        	form.submit();
+        }
+        });     
+        
+        
+        </script>
+         
+                 
+          </section> 
      
+        <br>
 
-
-
-    </section>
+       
 
  
  <footer class="container-fluid">
     
-     <h1 class=text-center style=" padding: 30px; background-color: lightgray;">Event</h1>
+     <nav class="container text-center">
+  <ul class="pagination">
+ <c:if test="${pageMaker.prev}">
+   <li><a href="view${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+  </c:if> 
+  
+  <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+   <li><a href="view${pageMaker.makeQuery(idx)}">${idx}</a></li>
+  </c:forEach>
+    
+  <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+   <li><a href="view${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+  </c:if> 
+  </ul>
+</nav>
       
  </footer>
  

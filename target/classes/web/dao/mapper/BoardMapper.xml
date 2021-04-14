@@ -39,7 +39,7 @@
 </sql>
    
    <!-- 총 게시글 갯수 출력 -->
-   <select id="listPage"  resultType="web.dto.BoardDTO" >
+   <select id="listBoardPage"  resultType="web.dto.BoardDTO" >
      select boardNo,boardTitle,boardContent,boardDate,boardVisit,writeId
      from 
      (select boardNo,boardTitle,boardContent,boardDate,boardVisit,writeId, 
@@ -53,7 +53,7 @@
    </select>
    
     <!-- 총 게시글 출력 -->
-   <select id="listCount" resultType="int">
+   <select id="listBoardCount" resultType="int">
    
     select count(boardNo)
     from tbl_board
@@ -74,7 +74,7 @@
    
    
    <!-- 게시글 수정 -->
-    <update id="updateBoard" parameterType="int">
+    <update id="updateBoard" parameterType="web.dto.BoardDTO">
      update tbl_board
      set boardTitle = #{boardTitle} ,boardContent = #{boardContent}
      where boardNo= #{boardNo}
@@ -82,11 +82,10 @@
     </update>
   
    <!-- 게시글 삭제 -->
-   <delete id="deleteBoard" parameterType="web.dto.BoardDTO">
+   <delete id="deleteBoard" parameterType="int">
     delete from tbl_board
     where boardNo = #{boardNo}
-   
-   
+     
    </delete>
   
   

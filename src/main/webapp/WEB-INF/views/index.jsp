@@ -57,23 +57,21 @@
           alert('${member.userName}님 환영합니다.')
          
          </script>
-  
-       
+      
         
          <li><a href="#">마이페이지</a></li>     
          <li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
-           </c:if>  
-           
-           
-            <li class="dropdown">
+      
+             
+         <li class="dropdown">
          <li><a href="${pageContext.request.contextPath}/board/list">공지사항</a></li>
           <li><a href="#">여행지검색</a></li>
           <li><a href="${pageContext.request.contextPath}/mate/list">메이트 찾기</a></li>
           <li><a href="${pageContext.request.contextPath}/community/list">커뮤니티</a></li>
-           </ul>
-           
-           
-          
+          <li><a href="${pageContext.request.contextPath}/inquiry/list">문의게시판</a></li>
+         
+           </c:if>    
+          </ul>
                 
      
      </div><!-- /.navbar-collapse -->

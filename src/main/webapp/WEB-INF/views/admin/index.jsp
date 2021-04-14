@@ -30,7 +30,8 @@
 <br>
 <ul class="nav nav-pills nav-stacked">
   <li role="presentation"><a href="/admin/member/list">Members</a></li>
-  <li role="presentation"><a href="/admin/board/list">Board</a></li>
+  <li role="presentation"><a href="/board/list">Notice Board</a></li>
+   <li role="presentation"><a href="/inquiry/list">Inquiry Board</a></li>
   <li role="presentation"><a href="#">HomePage</a></li>
 
 </ul>

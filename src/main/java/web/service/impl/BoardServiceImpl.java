@@ -18,41 +18,55 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO dao;
 	
 
+	@Override
+	public void writeBoardService(BoardDTO board) {
+		
+		dao.writeBoard(board);
+	}
 
 	@Override
 	public List<BoardDTO> listBoardService() {
-	
+		
 		return dao.listBoard();
 	}
 
-
-
-
 	@Override
 	public BoardDTO viewBoardService(BoardDTO board) {
+		
 		return dao.viewBoard(board);
 	}
 
 	@Override
-	public List<BoardDTO> listPage(Criteria cri) {
-		
-		return dao.listPage(cri);
-	}
-
-	@Override
-	public int listCount() {
-		
-		return dao.listCount();
-	}
-
-	@Override
 	public void visitCountService(int boardNo) {
-	  
-		dao.visitCount(boardNo);
+	
+	 dao.visitCount(boardNo);
 		
 	}
 
+	@Override
+	public void updateBoardService(BoardDTO board) {
+		
+		dao.updateBoard(board);
+	}
 
+	@Override
+	public void deleteBoardService(int boardNo) {
+		
+		dao.deleteBoard(boardNo);
+		
+	}
+
+	@Override
+	public List<BoardDTO> listBoardPage(Criteria cri) {
+		
+		return dao.listBoardPage(cri);
+	}
+
+	@Override
+	public int listBoardCount() {
+		
+		return dao.listBoardCount();
+	}
 
 
 	

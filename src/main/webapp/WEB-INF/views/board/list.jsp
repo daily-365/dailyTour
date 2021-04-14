@@ -105,7 +105,11 @@
 </nav>
  
 
- 
+<c:if test="${member.verify eq 1 }">
+ <button class="btn" type="button" style="float: right;" 
+ onclick="javascript: location.href='${pageContext.request.contextPath}/board/write';">글쓰기</button>
+</c:if>
+
 </section>
   
    

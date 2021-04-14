@@ -36,55 +36,6 @@ public class AdminServiceImpl implements AdminService {
 		return dao.listMemberCount();
 	}
 
-	@Override
-	public void writeBoardService(BoardDTO board) {
-		
-		dao.writeBoard(board);
-	}
-
-	@Override
-	public List<BoardDTO> listBoardService() {
-		
-		return dao.listBoard();
-	}
-
-	@Override
-	public BoardDTO viewBoardService(BoardDTO board) {
-		
-		return dao.viewBoard(board);
-	}
-
-	@Override
-	public void visitCountService(int boardNo) {
-	
-	 dao.visitCount(boardNo);
-		
-	}
-
-	@Override
-	public void updateBoardService(BoardDTO board) {
-		
-		dao.updateBoard(board);
-	}
-
-	@Override
-	public void deleteBoardService(int boardNo) {
-		
-		dao.deleteBoard(boardNo);
-		
-	}
-
-	@Override
-	public List<BoardDTO> listBoardPage(Criteria cri) {
-		
-		return dao.listBoardPage(cri);
-	}
-
-	@Override
-	public int listBoardCount() {
-		
-		return dao.listBoardCount();
-	}
 
 
 	

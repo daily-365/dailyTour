@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="web.dao.face.InqueryDAO">
+  
+  <select id="allinquiryList" resultType="web.dto.InquiryDTO">
+    
+    select inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName,inquiryDate
+    from tbl_inquiry
+     order by inquiryNo desc
+     
+  </select>
+  
+  <insert id="inquiryWrite" parameterType="web.dto.InquiryDTO">
+   insert into tbl_inquiry (inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName)
+   values (tbl_inquiry_seq.nextVal,#{inquiryTitle},#{inquiryContent},#{inquiryWriteName})
+  </insert>
+  
+  </mapper>

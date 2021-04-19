@@ -55,8 +55,8 @@ public class BoardController {
 	@RequestMapping(value = "/view",method = RequestMethod.GET)
 	public void getView(@ModelAttribute("scri") SearchCriteria scri,Model model) { logger.info("get view"); 
 	
-    List<BoardDTO> board = service.listBoardService();
-    model.addAttribute("board",board);
+    List<BoardDTO> board = service.listBoardPage(scri);
+    model.addAttribute("board", board);
     
 	 PageMaker pageMaker = new PageMaker();
 	 pageMaker.setCri(scri);
@@ -67,7 +67,7 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/view",method = RequestMethod.POST )
-	public void postView(Model model,@ModelAttribute("member")MemberDTO membe){
+	public void postView(Model model,@ModelAttribute("member")MemberDTO members){
 		
 		logger.info("post view");
    

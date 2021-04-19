@@ -7,18 +7,53 @@
   
   <mapper namespace="web.dao.face.CommunityDAO">
   
-  <select id="communityList">
+  <insert id="writeCommunity">
+  insert into tbl_community  (communityNo,communityWriteId,communityTitle,communityLocation,communityContent)
+  values (tbl_community_seq.nextVal, #{communityWriteId},#{communityTitle},#{communityLocation},#{communityContent} )
   
-   select c.communityNo,m.userId,c.communityTitle,c.communityDate,c.communityVisit
-   from community c
-   inner join member m
-   on c.userId = m.userId
-   
-   
-   
-  </select>
+  </insert>
  
-   
+ <select id="AlllistCommunity" resultType="web.dto.CommunityDTO">
+  select communityNo,communityWriteId,communityTitle,communityLocation,communityContent,communityDate,communityReply,communityVisit
+  from tbl_community 
+ 
+ </select>
+ 
+ <sql id="search">
+ <if test="searchType !=null">
+ <if test="searchType=='loc'.toString()">where communityLocation like '%' || #{keyword} || '%'</if>
+ <if test="searchType=='title'.toString()">where communityTitle like '%' || #{keyword} || '%'</if>
+ <if test="searchType=='name'.toString()">where communityWriteId like '%' || #{keyword} || '%'</if>
+ <if test="searchType=='visit'.toString()">where communityVisit like '%' || #{keyword} || '%'</if>
+ </if>
+ </sql>
+ 
+ 
+ 
+ <select id="listPage" resultType="web.dto.CommunityDTO">
+ select communityNo,communityWriteId,communityTitle,communityLocation,communityContent,communityDate,communityReply,communityVisit
+ from 
+ ( select communityNo,communityWriteId,communityTitle,communityLocation,communityContent,communityDate,communityReply,communityVisit,
+   row_number() over(order by communityNo desc) as rnum
+   from tbl_community 
+   <include refid="search"></include>
+      ) c 
+   where rnum between #{rowStart} and #{rowEnd}
+ 
+ order by communityNo desc
+ 
+ </select>
+ 
+ <select id="count" resultType="int">
+ 
+ select count(communityNo)
+ from tbl_community
+ where 
+  <include refid="search"></include>
+   <![CDATA[
+ communityNo>0
+    ]]>
+ </select>  
      
   
   </mapper>

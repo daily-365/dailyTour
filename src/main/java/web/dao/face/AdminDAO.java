@@ -2,9 +2,7 @@ package web.dao.face;
 
 import java.util.List;
 
-import web.dto.BoardDTO;
 import web.dto.MemberDTO;
-import web.util.Criteria;
 import web.util.SearchCriteria;
 
 public interface AdminDAO {

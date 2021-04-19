@@ -8,9 +8,20 @@
   
   <select id="selectAllMate">
   
-  select * from mate
-  
-  
+  select a.userId,a.profileImg,a.profileThumbImg,b.mateSearchTitle,b.mateSearchDate,b.mateSearchLocation,b.mateSearchContent
+  from tbl_member a
+  inner join tbl_mate b
+  a.userId = b.userId
+   
+    
   </select>
+  
+  <insert id="registMate">
+   insert into tbl_mate (mateSearchTitle,mateSearchDate,mateSearchLocation,mateSearchContent)
+  values(#{mateSearchTitle},#{mateSearchDate},#{mateSearchLocation},#{mateSearchContent})   
+    
+  </insert> 
+
+  
   
   </mapper>

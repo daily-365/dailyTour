@@ -16,37 +16,17 @@ private String	userMail;
 
 private int verify;
 
-
 private int userNo;
 private String userGrade;
+
 private Date regiDate;
 
+private String userAddr1;
+private String userAddr2;
+private String userAddr3;
 
-
-public int getUserNo() {
-	return userNo;
-}
-public void setUserNo(int userNo) {
-	this.userNo = userNo;
-}
-public String getUserGrade() {
-	return userGrade;
-}
-public void setUserGrade(String userGrade) {
-	this.userGrade = userGrade;
-}
-public Date getregiDate() {
-	return regiDate;
-}
-public void setregiDate(Date regiDate) {
-	this.regiDate = regiDate;
-}
-public int getVerify() {
-	return verify;
-}
-public void setVerify(int verify) {
-	this.verify = verify;
-}
+private String profileImg;
+private String profileThumbImg;
 public String getUserId() {
 	return userId;
 }
@@ -101,8 +81,60 @@ public String getUserMail() {
 public void setUserMail(String userMail) {
 	this.userMail = userMail;
 }
+public int getVerify() {
+	return verify;
+}
+public void setVerify(int verify) {
+	this.verify = verify;
+}
+public int getUserNo() {
+	return userNo;
+}
+public void setUserNo(int userNo) {
+	this.userNo = userNo;
+}
+public String getUserGrade() {
+	return userGrade;
+}
+public void setUserGrade(String userGrade) {
+	this.userGrade = userGrade;
+}
+public Date getRegiDate() {
+	return regiDate;
+}
+public void setRegiDate(Date regiDate) {
+	this.regiDate = regiDate;
+}
+public String getUserAddr1() {
+	return userAddr1;
+}
+public void setUserAddr1(String userAddr1) {
+	this.userAddr1 = userAddr1;
+}
+public String getUserAddr2() {
+	return userAddr2;
+}
+public void setUserAddr2(String userAddr2) {
+	this.userAddr2 = userAddr2;
+}
+public String getUserAddr3() {
+	return userAddr3;
+}
+public void setUserAddr3(String userAddr3) {
+	this.userAddr3 = userAddr3;
+}
+public String getProfileImg() {
+	return profileImg;
+}
+public void setProfileImg(String profileImg) {
+	this.profileImg = profileImg;
+}
+public String getProfileThumbImg() {
+	return profileThumbImg;
+}
+public void setProfileThumbImg(String profileThumbImg) {
+	this.profileThumbImg = profileThumbImg;
+}
 
 
-
-	
 }

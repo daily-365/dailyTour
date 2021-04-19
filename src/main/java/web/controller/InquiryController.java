@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import web.dto.InquiryDTO;
 import web.dto.MemberDTO;
@@ -43,6 +44,40 @@ public class InquiryController {
 		return "redirect:/inquiry/list";
 		
 	}
+	
+	@RequestMapping(value = "/view",method = RequestMethod.GET)
+	public void getInquiryView(InquiryDTO inquiry,Model model) {
+		
+		logger.info("get inquiry view");
+		
+		InquiryDTO view =(InquiryDTO) service.inquiryView(inquiry);
+		model.addAttribute("view",view);
+		
+	}
 
+	@RequestMapping(value = "/view",method = RequestMethod.POST)
+	public String postInquiryView(@ModelAttribute("member")MemberDTO member,InquiryDTO inquiry) {
+		
+		logger.info("post inquiry view");
+		
+		service.inquiryComment(inquiry);
+		
+		return "redirect:/inquiry/list";
+	}
+	
+	
+	@RequestMapping(value = "/modify",method = RequestMethod.GET)
+	public void getInquiryModify(InquiryDTO inquiry,Model model) {
+		
+		service.inquiryModify(inquiry);
+		
+	}
+	
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public void getInquiryDelete(InquiryDTO inquiry,Model model,@RequestParam(value = "inquiryNo",required = false)int inquiryNo) {
+		
+		service.inquiryDelete(inquiryNo);
+		
+	}
 
 }

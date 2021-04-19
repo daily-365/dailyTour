@@ -33,7 +33,6 @@
  <if test="searchType != null">
   <if test="searchType == 't'.toString()">where boardTitle like '%' || #{keyword} || '%'</if>
   <if test="searchType == 'c'.toString()">where boardContent like '%' || #{keyword} || '%'</if>
-   <if test="searchType == 'w'.toString()">where writeId like '%' || #{keyword} || '%'</if>
    <if test="searchType == 'tc'.toString()">where (boardTitle like '%' || #{keyword} || '%') or (boardContent like '%' || #{keyword} || '%')</if>
  </if>
 </sql>

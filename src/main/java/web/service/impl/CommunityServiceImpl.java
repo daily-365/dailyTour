@@ -5,24 +5,51 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import web.dao.face.CommuinityDAO;
+import web.dao.face.CommunityDAO;
 import web.dto.CommunityDTO;
 import web.service.face.CommunityService;
+import web.util.SearchCriteria;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {
 
 	@Autowired
-	CommuinityDAO dao;
+	CommunityDAO dao;
 	
-	
+
 	@Override
-	public List<CommunityDTO> communityListService(CommunityDTO community) {
+	public List<CommunityDTO> AlllistCommunity(CommunityDTO community) {
 		
-		return dao.communityList(community);
+		return dao.AlllistCommunity(community);
 	}
 
 	
+
+	@Override
+	public void writeCommunity(CommunityDTO community) {
+		
+		dao.writeCommunity(community);
+		
+	}
+
+
+
+	@Override
+	public List<CommunityDTO> listPage(SearchCriteria scri) {
+	
+		return dao.listPage(scri);
+	}
+
+	@Override
+	public int count() {
+	
+    return dao.count();
+    
+    
+	}
+
+
+
 	
 	
 }

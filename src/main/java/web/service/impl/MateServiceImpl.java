@@ -22,5 +22,11 @@ public class MateServiceImpl implements MateService{
 		
 	}
 
+	@Override
+	public void registMate(MateDTO mate) {
+        dao.registMate(mate);
+		
+	}
+
 		
 }

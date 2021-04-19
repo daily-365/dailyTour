@@ -27,5 +27,31 @@ public class InquiryServiceImpl implements InquiryService {
 		dao.inquiryWrite(inquiry);
 		
 	}
+
+	@Override
+	public InquiryDTO inquiryView(InquiryDTO inquiry) {
+		
+		return dao.inquiryView(inquiry);
+	}
+
+	@Override
+	public void inquiryComment(InquiryDTO inquiry) {
+		dao.inquiryComment(inquiry);
+		
+	}
+
+	@Override
+	public void inquiryModify(InquiryDTO inquiry) {
+	
+		 dao.inquiryModify(inquiry);
+		
+	}
+
+	@Override
+	public void inquiryDelete(int inquiryNo) {
+		
+		dao.inquiryDelete(inquiryNo);
+		
+	}
 	
 }

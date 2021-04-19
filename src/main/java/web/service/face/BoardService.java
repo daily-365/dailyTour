@@ -13,7 +13,7 @@ public interface BoardService {
 	public void writeBoardService(BoardDTO board);
 	
 	//글 리스트보기
-	public List<BoardDTO> listBoardService();
+	public List<BoardDTO> listBoardService(BoardDTO board);
 	
 	//글 상세보기
 	public BoardDTO viewBoardService(BoardDTO board);

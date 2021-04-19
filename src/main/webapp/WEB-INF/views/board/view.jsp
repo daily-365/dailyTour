@@ -13,6 +13,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" src="/../../resources/js/jquery-3.5.1.min.js"></script>
 
 
  <div class="container-fluid">
@@ -42,7 +43,7 @@
        <c:forEach var="board" items="${board}">
         
       
-        <form role="form"  autocomplete="off"  onsubmit="msg()">
+        <form role="form" method="get" autocomplete="off"  onsubmit="msg()">
        
            <div class="form-group col-sm-6 col-sm-offset-3">
               <label for="boardNo" >글번호</label><br>
@@ -76,11 +77,11 @@
          <c:if test="${member.verify eq 1 }">
           <c:forEach var="board" items="${board}">
           
-          <form role="form"  autocomplete="off" >
+          <form role="form" method="get" autocomplete="off" >
        
            <div class="form-group col-sm-6 col-sm-offset-3">
               <label for="boardNo" >글번호</label><br>
-              <input class="form-control" type="number" value="${board.boardNo }"  name="boardNo" readonly="readonly"">
+              <input class="form-control" type="number" value="${board.boardNo }"  name="boardNo" readonly="readonly">
               </div>
               
               <div class="form-group col-sm-6 col-sm-offset-3">              
@@ -112,12 +113,13 @@
          </form>
           
            </c:forEach>
-                  
+             
+             
           </c:if>
-                   
-          
+                    
         <script type="text/javascript">
         
+        $(document).ready(function(){
         var form = $("form[role='form']")
         
         
@@ -140,10 +142,11 @@
         	form.submit();
         }
         });     
-        
+        });
         
         </script>
-         
+           
+       
                  
           </section> 
      

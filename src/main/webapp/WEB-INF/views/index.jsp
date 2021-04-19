@@ -59,7 +59,7 @@
          </script>
       
         
-         <li><a href="#">마이페이지</a></li>     
+         <li><a href="/myPage/info">마이페이지</a></li>     
          <li><a href="${pageContext.request.contextPath}/member/logout">로그아웃</a></li>
       
              
@@ -200,6 +200,7 @@ wrap: true
 $('#myModal').modal({
   keyboard: false
 })
+
 </script>
 
 
@@ -217,67 +218,77 @@ $('#myModal').modal({
   
   <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">국내</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">제주</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">부산</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">여수</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">철원</a></li>
   </ul>  
   </li>
   
    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">동남아</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">베트남(하노이)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">캄보디아(씨엠립)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">태국(푸껫)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">대만(타이베이)</a></li>
   </ul>  
   </li>
   
    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">중국</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">베이징</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">상하이</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">광저우</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">청도</a></li>
   </ul>  
   </li>
   
    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">일본</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">도쿄</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">오사카</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">오키나와</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">삿포르</a></li>
   </ul>  
   </li>
   
    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">남태평양</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">괌</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">뉴질랜드</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">시드니</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">하와이</a></li>
   </ul>  
   </li>
-  
-   <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">미주</a>
-   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-  </ul>  
-  </li>
-  
   
    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">유럽</a>
    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">벨기에(룩셈부르크)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">러시아(시베리아횡단)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">스페인(마드리드)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">그리스(아테네)</a></li>
   </ul>  
   </li>
+  
+    <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">미주</a>
+   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">미국(뉴욕)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">캐나다(몬트리올)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">멕시코(바깔라르)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">알래스카</a></li>
+  </ul>  
+  </li>
+  
+     <li role="presentation"><a href="#" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">남미</a>
+   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">볼리비아(우유니 소금사막)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">페루(마추픽추)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">아르헨티나(이과수 폭포)</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">칠레(산티아고)</a></li>
+  </ul>  
+  </li>
+  
+  
   
 
 </ul>

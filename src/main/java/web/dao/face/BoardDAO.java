@@ -14,7 +14,7 @@ public interface BoardDAO {
 	public void writeBoard(BoardDTO board);
 	
 	//글 리스트보기
-	public List<BoardDTO> listBoard();
+	public List<BoardDTO> listBoard(BoardDTO board);
 
 	//글 상세보기
 	public BoardDTO viewBoard(BoardDTO board);

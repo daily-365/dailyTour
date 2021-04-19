@@ -41,14 +41,25 @@
 
   </thead>
 
+
+
 <c:forEach var="list" items="${list }">
 <tbody>
  <tr>
  <td>${list.inquiryNo}</td>
  
- <td><a href="/inquriy/view?inquiryWriteName=${list.inquiryWriteName}">${list.inquiryTitle}</a></td>
+   <c:if test="${member.userName eq list.inquiryWriteName || member.verify eq 1}">
+ <td><a href="/inquiry/view?inquiryNo=${list.inquiryNo}">${list.inquiryTitle}</a></td>
+    </c:if>
  
+      
+   <c:if test="${member.userName ne list.inquiryWriteName && member.verify ne 1}">
+  <td>${list.inquiryTitle}</td>
+  </c:if>
+  
+  
  <td>${list.inquiryWriteName}</td>
+ 
  <td><fmt:formatDate value="${list.inquiryDate}" pattern="yyyy-MM-dd HH:mm:SS"/></td>
   </tr>
   
@@ -61,6 +72,7 @@
  
  </section>
  
+ <c:if test="${member.verify ne 1 }">
  
  <footer class="container"> 
    <br><br>
@@ -106,7 +118,7 @@
                   
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">작성</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
         
      </div>
         
@@ -120,6 +132,8 @@
 
  <br><br>
  </footer>
+ </c:if>
  
+
  </div>
     

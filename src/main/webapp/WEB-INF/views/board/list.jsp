@@ -24,7 +24,6 @@
   <option value="">목록</option>
   <option value="t">제목</option>
   <option value="c">내용</option>
-  <option value="w">작성자</option>
   <option value="tc">제목  / 내용</option>
  </select>
 

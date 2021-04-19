@@ -38,7 +38,7 @@
     
     <div class="form-group">
      <select class="form-control col-sm-1">
-     <%for(int i=12; i>=1; i--){ %>
+     <%for(int i=1; i<=12; i++){ %>
      <option value="<%=i%>"><%=i %>시</option>
         <%} %>
     </select>
@@ -46,7 +46,7 @@
     
     <div class="form-group">
      <select class="form-control col-sm-1"> 
-     <%for(int i=10; i<=60; i+=10){ %>
+     <%for(int i=0; i<=50; i+=10){ %>
      <option value="<%=i%>"><%=i %>분</option>
         <%} %>
     </select>
@@ -75,29 +75,23 @@
    <section class="container">
    
    <div class="profile">
-   <img src="/../../resources/img/사진1.jpg" style="width:200px; height: 200px;" class="img-thumbnail">
+   <img src="${member.profileThumbImg }" style="width:200px; height: 200px;" class="img-thumbnail">
    <br><br>
    <h4>같이 저녁드실분 찾아요</h4>
    <p>강남</p>
    <p>11:00</p>
-   <span>에비시디 &nbsp; &nbsp; &nbsp; &nbsp;<img src="/../../resources/img/사진2.jpg" style="width:50px; height: 50px;" class="img-circle"></span>             
+   <span>${member.userName} &nbsp; &nbsp; &nbsp; &nbsp;<img src="${member.profileImg }" style="width:50px; height: 50px;" class="img-circle"></span>             
    <br><br>
    </div>
    
-   
-   <div class="profile">
-    <img src="/../../resources/img/사진1.jpg" style="width:200px; height: 200px;" class="img-thumbnail">
-   <br><br>
-   <h4>같이 저녁드실분 찾아요</h4>
-   <p>강남</p>
-   <p>11:00</p>
-   <span>에비시디 &nbsp; &nbsp; &nbsp; &nbsp;<img src="/../../resources/img/사진2.jpg" style="width:50px; height: 50px;" class="img-circle"></span>  
-   <br><br>
-   </div>
-   
+      
     </section>
      
-   
+   <footer class="container">
+     <br><br>
+    <button type="button" class="btn btn-primary col-sm-2 pull-right" onclick="javascript: location.href='/mate/regist'">글쓰기</button>
+   <br><br>
+   </footer>
    
    
    </div>

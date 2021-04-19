@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="web.dao.face.MyPageDAO">
+  
+
+<!-- 회원정보 조회 -->
+  <select id="selectByMemberInfo" parameterType="MemberDTO" resultType="MemberDTO">
+  
+  select userNo,userId,userPw,userName,userBirth1,userBirth2,userBirth3,userGender,userPhone,userMail,verify,userAddr1,userAddr2,userAddr3,profileImg,profileThumbImg
+  from tbl_member
+  where userId = #{userId}
+  
+  
+  </select>
+  
+  
+    <!-- 회원 정보 변경 -->
+  <update id="modifyMemberInfo">
+    
+    update tbl_member
+    set userName = #{userName},
+        userBirth1 = #{userBirth1},
+        userBirth2 = #{userBirth2},
+        userBirth3 = #{userBirth3},
+        userPhone = #{userPhone },
+        userMail = #{userMail },
+        userAddr1 = #{userAddr1 },
+        userAddr2 = #{userAddr2 },
+        userAddr3 = #{userAddr3 },
+        profileImg = #{profileImg },
+        profileThumbImg=#{profileThumbImg}
+    where userId = #{userId}
+  
+  
+  </update>
+  
+  </mapper>

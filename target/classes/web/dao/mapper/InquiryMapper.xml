@@ -7,7 +7,7 @@
   
   <select id="allinquiryList" resultType="web.dto.InquiryDTO">
     
-    select inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName,inquiryDate
+    select inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName,inquiryDate,inquiryComment
     from tbl_inquiry
      order by inquiryNo desc
      
@@ -17,5 +17,38 @@
    insert into tbl_inquiry (inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName)
    values (tbl_inquiry_seq.nextVal,#{inquiryTitle},#{inquiryContent},#{inquiryWriteName})
   </insert>
+  
+  
+  <select id="inquiryView" resultType="web.dto.InquiryDTO">
+   select inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName,inquiryDate,inquiryComment
+   from tbl_inquiry
+   where inquiryNo=#{inquiryNo}
+     
+  </select>
+  
+  <insert id="inquiryComment" parameterType="web.dto.InquiryDTO">
+  insert into tbl_inquiry (inquiryNo,inquiryTitle,inquiryContent,inquiryWriteName,inquiryComment)
+  values(tbl_inquiry_seq.nextVal,#{inquiryTitle},#{inquiryContent},#{inquiryWriteName},#{inquiryComment})
+  
+  </insert>
+  
+  <update id="inquiryModify">
+  update tbl_inquiry 
+  set inquiryTitle=#{inquiryTitle},
+      inquiryContent=#{inquiryContent}
+  where inquiryNo=#{inquiryNo}  
+   
+  
+  </update>
+  
+  <delete id="inquiryDelete">
+  
+  delete from tbl_inquiry 
+  where inquiryNo =#{inquiryNo}
+  
+  </delete>
+  
+  
+  
   
   </mapper>

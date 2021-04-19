@@ -33,7 +33,8 @@
     </div>
 
         <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
+        
+         <div class="form-group">
          <select class="form-control" name="searchType" id="searchType">
          <option value="loc">모집 지역</option>
          <option value="title">제목</option>
@@ -87,7 +88,7 @@
     <tbody>
     <tr>
     <td>${list.communityNo }</td>
-    <td><a href="/community/view?communityNo?=${communityNo}">${list.communityTitle }</a></td>
+    <td><a href="/community/view?communityNo=${list.communityNo}">${list.communityTitle }</a></td>
     <td>${list.communityLocation }</td>
    <td>${list.communityWriteId }</td>
     <td><fmt:formatDate value="${list.communityDate }" pattern="yyyy-MM-dd"/></td>

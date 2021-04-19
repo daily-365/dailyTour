@@ -8,8 +8,8 @@
   <mapper namespace="web.dao.face.CommunityDAO">
   
   <insert id="writeCommunity">
-  insert into tbl_community  (communityNo,communityWriteId,communityTitle,communityLocation,communityContent)
-  values (tbl_community_seq.nextVal, #{communityWriteId},#{communityTitle},#{communityLocation},#{communityContent} )
+  insert into tbl_community  (communityNo,communityWriteId,communityTitle,communityLocation,communityContent,communityReply)
+  values (tbl_community_seq.nextVal, #{communityWriteId},#{communityTitle},#{communityLocation},#{communityContent},#{communityReply} )
   
   </insert>
  
@@ -55,5 +55,37 @@
     ]]>
  </select>  
      
+  
+  
+  <select id="selectByCommunityNO" resultType="web.dto.CommunityDTO">
+   select  communityNo,communityWriteId,communityTitle,communityLocation,communityContent,communityDate,communityReply,communityVisit
+  from tbl_community
+  where communityNo = #{communityNo}
+  
+  </select>
+  
+  
+  <insert id="writeReply">
+  insert into tbl_community_reply (communityReplyNo,communityReplyId,communityReplyContent)
+  values (tbl_community_reply_seq.nextVal,#{communityReplyId},#{communityReplyContent})
+  
+  </insert>
+  
+   <select id="listAllReply" resultType="web.dto.CommunityReplyDTO">
+     select communityReplyNo,communityReplyId,communityReplyContent,communityReplyDate
+     from tbl_community_reply
+     order by communityReplyNo desc
+     </select>
+     
+     <select id="communityReply" resultType="web.dto.CommunityDTO">
+     select communityReply,communityWriteId
+     from tbl_community
+     where communityWriteId=#{communityWriteId}
+     
+     </select>
+    
+    
+    
+  
   
   </mapper>

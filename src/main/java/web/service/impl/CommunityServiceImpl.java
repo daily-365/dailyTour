@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import web.dao.face.CommunityDAO;
 import web.dto.CommunityDTO;
+import web.dto.CommunityReplyDTO;
 import web.service.face.CommunityService;
 import web.util.SearchCriteria;
 
@@ -46,6 +47,37 @@ public class CommunityServiceImpl implements CommunityService {
     return dao.count();
     
     
+	}
+
+	@Override
+	public CommunityDTO selectByCommunityNO(CommunityDTO community) {
+	
+		return dao.selectByCommunityNO(community);
+	}
+
+
+
+	@Override
+	public void writeReply(CommunityReplyDTO commReply) {
+	
+		dao.writeReply(commReply);
+		
+	}
+
+
+
+	@Override
+	public List<CommunityReplyDTO> listAllReply(CommunityReplyDTO commReply) {
+		
+		return dao.listAllReply(commReply);
+	}
+
+
+
+	@Override
+	public CommunityDTO communityReply(CommunityDTO community) {
+		
+		return dao.communityReply(community);
 	}
 
 

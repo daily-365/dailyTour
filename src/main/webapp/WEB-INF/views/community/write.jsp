@@ -71,6 +71,14 @@
       <textarea class="form-control" rows="5" cols="50" required="required" name="communityContent" id="communityContetn"></textarea>
     <br><br>
       </div>
+      
+          <div class="form-gorup col-sm-4 col-sm-offset-4">
+      <label for="communityReply">덧글 제목</label>
+      <textarea class="form-control" rows="5" cols="50" required="required"
+      placeholder="다른 분들이 덧글을 남길 수 있도록 간단히 덧글 제목을 남겨 주세요." name="communityReply" id="communityReply"></textarea>
+    <br><br>
+      </div>
+      
      
           <div class="form-gorup col-sm-4 col-sm-offset-4">
           <button type="submit"  class="btn btn-warning" id="registBtn" >등록</button>

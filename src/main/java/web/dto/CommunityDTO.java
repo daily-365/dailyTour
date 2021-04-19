@@ -60,7 +60,6 @@ public class CommunityDTO {
 	public void setCommunityVisit(int communityVisit) {
 		this.communityVisit = communityVisit;
 	}
-
 	
 	
 	

@@ -82,6 +82,29 @@ public class CommunityServiceImpl implements CommunityService {
 
 
 
+	@Override
+	public void visitCount(int communityNo) {
+		dao.visitCount(communityNo);
+		
+	}
 	
+	@Override
+	public void modifyCommunity(CommunityDTO community) {
+	
+		dao.modifyCommunity(community);
+		
+	}
+
+
+
+	@Override
+	public void deleteCommunity(int communityNo) {
+		dao.deleteCommunity(communityNo);
+		
+	}
+
+
+
+
 	
 }

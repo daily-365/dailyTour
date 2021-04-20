@@ -85,16 +85,19 @@ public class CommunityController {
 	  model.addAttribute("comm",comm);
 	  
 	  
+		service.visitCount(communityNo);
+		
 		
 	}
 	
 	@RequestMapping(value = "/view",method = RequestMethod.POST)
-	public void postView(@ModelAttribute("member")MemberDTO member) {
+	public String postView(@ModelAttribute("member")MemberDTO member,CommunityDTO community) {
 		
 		logger.info("post view");	
 		
+		service.modifyCommunity(community);
 		
-		
+	    return "redirect:/community/list";		
 	}
 	
 	
@@ -122,6 +125,19 @@ public class CommunityController {
 		 service.writeReply(commReply);
 		
 		return "redirect:/community/reply";
+	}
+	
+	
+	
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public String deleteCommunity(@RequestParam(name = "communityNo",required = false)int communityNo) {
+		
+		logger.info("get deleteCommunity");
+		
+		service.deleteCommunity(communityNo);
+		
+		return "redirect:/community/list";
+		
 	}
 	
 	

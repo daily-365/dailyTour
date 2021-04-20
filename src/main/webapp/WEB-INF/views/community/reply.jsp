@@ -69,8 +69,8 @@
     
     <button type="button" class="btn btn-primary col-sm-offset-10">수정</button>
     <button type="button" class="btn btn-danger">삭제</button></p> <br>
-  
-    
+ 
+
     ${commRe.communityReplyContent }
     </c:forEach>
      

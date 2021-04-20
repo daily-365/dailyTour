@@ -24,7 +24,7 @@
  <if test="searchType=='loc'.toString()">where communityLocation like '%' || #{keyword} || '%'</if>
  <if test="searchType=='title'.toString()">where communityTitle like '%' || #{keyword} || '%'</if>
  <if test="searchType=='name'.toString()">where communityWriteId like '%' || #{keyword} || '%'</if>
- <if test="searchType=='visit'.toString()">where communityVisit like '%' || #{keyword} || '%'</if>
+ <if test="searchType=='visit'.toString()">where communityVisit between 1 and TO_NUMBER(${keyword})</if>
  </if>
  </sql>
  
@@ -68,12 +68,13 @@
   <insert id="writeReply">
   insert into tbl_community_reply (communityReplyNo,communityReplyId,communityReplyContent)
   values (tbl_community_reply_seq.nextVal,#{communityReplyId},#{communityReplyContent})
+    </insert>
   
-  </insert>
   
    <select id="listAllReply" resultType="web.dto.CommunityReplyDTO">
      select communityReplyNo,communityReplyId,communityReplyContent,communityReplyDate
      from tbl_community_reply
+      
      order by communityReplyNo desc
      </select>
      
@@ -84,8 +85,37 @@
      
      </select>
     
+    <update id="visitCount">
+    update  tbl_community
+    set communityVisit = communityVisit+1
+    where communityNo = #{communityNo}   
+    </update>
     
     
+    <update id="modifyCommunity">
+     update tbl_community
+     set communityTitle =#{communityTitle},
+     communityLocation  =#{communityLocation},
+     communityContent  =#{communityContent}
+    where communityWriteId = #{communityWriteId}
+    
+    </update>
+    
+    <delete id="deleteCommunity">
+    delete from
+    tbl_community
+    where communityNo = #{communityNo}
+        
+    </delete>
+    
+    
+    
+    <select id="replyCnt">
+    
+     select count(communityReplyNo)
+     from tbl_community_reply
+              
+    </select>
   
   
   </mapper>

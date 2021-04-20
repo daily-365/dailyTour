@@ -12,6 +12,8 @@ public class CommunityDTO {
 	private Date communityDate;
 	private String communityReply;
 	private int communityVisit;
+	
+	
 	public int getCommunityNo() {
 		return communityNo;
 	}

@@ -31,4 +31,19 @@ public interface CommunityDAO {
 	//댓글 제목
 	public CommunityDTO communityReply(CommunityDTO community);
 	
+	//커뮤니티 조회수 증가
+	public void visitCount(int communityNo);
+	
+	//커뮤니티 글 수정
+	public void modifyCommunity(CommunityDTO community);
+	
+	//커뮤니티 글 삭제
+	public void deleteCommunity(int communityNo);
+	
+	
+	
+	
+	
+	
+	
 }
